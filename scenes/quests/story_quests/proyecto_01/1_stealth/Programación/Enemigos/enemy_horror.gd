@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var patrol_points: Array[Vector2] = []  # puntos A, B, C...
 @export var wait_time: float = 1.0  # pausa entre puntos
 @export var light_detection_area: Area2D  # Área para detectar la linterna
+@export var linterna: Node2D
+
 
 # --- Referencias de nodos ---
 @onready var sprite: AnimatedSprite2D = $Sprite

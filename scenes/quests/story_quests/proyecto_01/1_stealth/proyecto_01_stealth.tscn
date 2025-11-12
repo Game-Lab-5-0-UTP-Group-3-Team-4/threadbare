@@ -186,8 +186,9 @@ visible = true
 [node name="AreaAmbiente" parent="." instance=ExtResource("21_htxck")]
 position = Vector2(427, 447)
 
-[node name="EnemyHorror" parent="." instance=ExtResource("22_l2emv")]
+[node name="EnemyHorror" parent="." node_paths=PackedStringArray("linterna") instance=ExtResource("22_l2emv")]
 position = Vector2(900, 1400)
-patrol_points = Array[Vector2]([Vector2(900, 1359), Vector2(1200, 1359), Vector2(1400, 1359)])
+patrol_points = Array[Vector2]([Vector2(900, 1400), Vector2(1200, 1400), Vector2(1400, 1400)])
+linterna = NodePath("../Node2D/Player/Linterna")
 
 [editable path="Node2D/Player"]
