@@ -374,7 +374,7 @@ shape = SubResource("CircleShape2D_e6rvs")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cui8j")
-animation = &"idle"
+animation = &"walk"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 1537
