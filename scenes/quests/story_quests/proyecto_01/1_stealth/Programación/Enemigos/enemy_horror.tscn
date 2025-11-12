@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://ckp2md55beqg8" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/Enemigos/scream-90747 v2.ogg" id="3_y22au"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e6rvs"]
-radius = 127.263504
+radius = 50.635956
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlsvc"]
 atlas = ExtResource("2_e6rvs")
@@ -324,7 +324,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -360,7 +360,7 @@ animations = [{
 radius = 481.52466
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m68f1"]
-radius = 141.90842
+radius = 68.0294
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("light_detection_area")]
 collision_layer = 512
@@ -369,11 +369,12 @@ script = ExtResource("1_vjb0x")
 light_detection_area = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 80)
 shape = SubResource("CircleShape2D_e6rvs")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cui8j")
-animation = &"attack"
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 1537
