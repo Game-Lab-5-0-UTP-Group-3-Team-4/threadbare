@@ -1,16 +1,20 @@
 extends CharacterBody2D
 
+# --- Variables principales ---
 @export var speed: float = 100
 @export var attack_cooldown: float = 1.5
-@export var patrol_points: Array[Vector2] = []  # ← puntos A, B, C, etc.
+@export var patrol_points: Array[Vector2] = []  # puntos A, B, C...
 @export var wait_time: float = 1.0  # pausa entre puntos
+@export var light_detection_area: Area2D  # Área para detectar la linterna
 
+# --- Referencias de nodos ---
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var vision_area: Area2D = $Area2D
 @onready var attack_area: Area2D = $AttackArea
 @onready var attack_timer: Timer = $AttackTimer
 @onready var scream_player: AudioStreamPlayer2D = $ScreamPlayer
 
+# --- Estados y variables internas ---
 var player: Node2D = null
 var can_attack: bool = true
 var has_screamed: bool = false
@@ -18,19 +22,29 @@ var current_point_index: int = 0
 var waiting: bool = false
 var wait_timer: float = 0.0
 var spawn_position: Vector2
-var state: String = "patrolling" # estados: patrolling / chasing / returning
+var state: String = "patrolling" # patrolling / chasing / returning
+var is_in_light: bool = false
+var light_timer: float = 0.0
 
+# --- READY ---
 func _ready() -> void:
 	spawn_position = global_position
 	$CollisionShape2D.disabled = false
 
+	# Conexiones normales
 	vision_area.body_entered.connect(_on_body_entered)
 	vision_area.body_exited.connect(_on_body_exited)
 	attack_area.body_entered.connect(_on_attack_area_entered)
 	attack_timer.timeout.connect(_on_attack_timeout)
 
+	# Conexión para detección de luz (usando área_entered)
+	if light_detection_area:
+		light_detection_area.area_entered.connect(_on_light_entered)
+		light_detection_area.area_exited.connect(_on_light_exited)
+
 	sprite.play("idle")
 
+# --- PROCESO PRINCIPAL ---
 func _physics_process(delta: float) -> void:
 	match state:
 		"patrolling":
@@ -40,7 +54,7 @@ func _physics_process(delta: float) -> void:
 		"returning":
 			_return_to_spawn(delta)
 
-# --- Patrullaje ---
+# --- PATRULLAJE ---
 func _patrol(delta: float) -> void:
 	if patrol_points.is_empty():
 		sprite.play("idle")
@@ -66,7 +80,7 @@ func _patrol(delta: float) -> void:
 		current_point_index = (current_point_index + 1) % patrol_points.size()
 		sprite.play("idle")
 
-# --- Persecución ---
+# --- PERSECUCIÓN ---
 func _chase_player(delta: float) -> void:
 	if not player:
 		state = "returning"
@@ -78,7 +92,7 @@ func _chase_player(delta: float) -> void:
 	sprite.play("default")
 	sprite.flip_h = velocity.x < 0
 
-# --- Regresar a punto inicial ---
+# --- REGRESAR AL PUNTO INICIAL ---
 func _return_to_spawn(delta: float) -> void:
 	var dir = (spawn_position - global_position).normalized()
 	velocity = dir * speed
@@ -89,7 +103,7 @@ func _return_to_spawn(delta: float) -> void:
 	if global_position.distance_to(spawn_position) < 8.0:
 		state = "patrolling"
 
-# --- Señales ---
+# --- DETECCIÓN DEL JUGADOR ---
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player = body
@@ -107,6 +121,7 @@ func _on_body_exited(body: Node2D) -> void:
 		has_screamed = false
 		state = "returning"
 
+# --- ATAQUE ---
 func _on_attack_area_entered(body: Node2D) -> void:
 	if body.name == "Player" and can_attack:
 		can_attack = false
@@ -117,3 +132,15 @@ func _on_attack_area_entered(body: Node2D) -> void:
 
 func _on_attack_timeout() -> void:
 	can_attack = true
+
+# --- DETECCIÓN DE LUZ (LINTERNAS) ---
+func _on_light_entered(area: Area2D) -> void:
+	if area.name == "LightArea":
+		is_in_light = true
+		print("💡 El monstruo ha entrado en el área de la linterna")
+
+func _on_light_exited(area: Area2D) -> void:
+	if area.name == "LightArea":
+		is_in_light = false
+		light_timer = 0.0
+		print("🌑 El monstruo salió del área de la linterna")
