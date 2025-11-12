@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ckp2md55beqg8"
+path="res://.godot/imported/scream-90747 v2.ogg-cfabff19b9b2b1e17413c3cf27efeaa7.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/Enemigos/scream-90747 v2.ogg"
+dest_files=["res://.godot/imported/scream-90747 v2.ogg-cfabff19b9b2b1e17413c3cf27efeaa7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
