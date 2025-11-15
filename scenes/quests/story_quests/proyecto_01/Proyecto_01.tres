@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=61 format=3 uid="uid://ck7tghs5pmfeu"]
+[gd_resource type="TileSet" load_steps=65 format=3 uid="uid://ck7tghs5pmfeu"]
 
 [ext_resource type="Texture2D" uid="uid://doc4qg7e3kgs" path="res://assets/third_party/tiny-swords/Terrain/Water/Water.png" id="1_wem3e"]
 [ext_resource type="Texture2D" uid="uid://lg5dl13njsg3" path="res://assets/first_party/tiles/Grass_And_Sand_Tiles.png" id="2_h4e3w"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bpcuacsg2ioyx" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/muro-exterior-v2.png" id="12_wgkwg"]
 [ext_resource type="Texture2D" uid="uid://r7scukca5yro" path="res://assets/first_party/tiles/Void_Tiles_Empty.png" id="13_iewhc"]
 [ext_resource type="Texture2D" uid="uid://cn2j018vohdap" path="res://assets/first_party/tiles/Void_Tiles_Stars_Level1.png" id="14_1i47w"]
+[ext_resource type="Texture2D" uid="uid://gvah0cvf527" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/bloque_negro v3.png" id="14_lhdkf"]
+[ext_resource type="Texture2D" uid="uid://b25kds320jqaw" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/cesped-v2 - (BLOQUEO).png" id="15_bv8in"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_0wfyh"]
 tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 2, 1, 65537, 0, 65537, 65537, 1, 131073, 65537, 2, 2, 131073, 0, 65538, 131073, 1, 131074, 131073, 2)
@@ -789,6 +791,34 @@ texture_region_size = Vector2i(64, 64)
 1:1/0/terrains_peering_bit/left_side = 3
 1:1/0/terrains_peering_bit/top_side = 3
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6y3g"]
+texture = ExtResource("14_lhdkf")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ml78f"]
+texture = ExtResource("15_bv8in")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmclm"]
 texture = ExtResource("8_rqjne")
 texture_region_size = Vector2i(64, 64)
@@ -1545,6 +1575,8 @@ sources/16 = SubResource("TileSetAtlasSource_wgkwg")
 sources/17 = SubResource("TileSetAtlasSource_lhdkf")
 sources/18 = SubResource("TileSetAtlasSource_bv8in")
 sources/19 = SubResource("TileSetAtlasSource_wkocm")
+sources/20 = SubResource("TileSetAtlasSource_e6y3g")
+sources/21 = SubResource("TileSetAtlasSource_ml78f")
 pattern_0 = SubResource("TileMapPattern_0wfyh")
 pattern_1 = SubResource("TileMapPattern_sugp2")
 pattern_2 = SubResource("TileMapPattern_jyhfs")

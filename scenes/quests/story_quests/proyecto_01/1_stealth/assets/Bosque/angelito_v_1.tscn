@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://i8vyym4h3v7a"]
+
+[ext_resource type="Texture2D" uid="uid://c7s0mjf8wc361" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/angel4.png" id="1_xmcf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trftf"]
+size = Vector2(90, 113)
+
+[sub_resource type="Gradient" id="Gradient_t2q3w"]
+offsets = PackedFloat32Array(0, 0.70542634)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yatgk"]
+gradient = SubResource("Gradient_t2q3w")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Angelito_v1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xmcf3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_trftf")
+
+[node name="Luz" type="PointLight2D" parent="."]
+z_index = 5
+scale = Vector2(1.5, 1.5)
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_yatgk")
+texture_scale = 3.0

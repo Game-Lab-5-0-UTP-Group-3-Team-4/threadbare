@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buralpwdr754c"]
+
+[ext_resource type="Texture2D" uid="uid://sipejev2hkb5" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/cesped1.2.png" id="1_dgmlb"]
+
+[node name="Hojas pequeñas" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dgmlb")

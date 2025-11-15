@@ -1,8 +1,16 @@
 # SPDX-FileCopyrightText: The Threadbare Authors
 # SPDX-License-Identifier: MPL-2.0
 ~ start
-This simple stealth scene includes guards and a collectible. Use the nodes in the Scene Tree to build a level.
-Notice the tile map is built with multiple layers. This makes it easier to make changes to the environment.
-Click a node, like "Player" or "Guard1" and modify their properties in the Inspector, or add new elements.
-Don't be afraid to think outside the box. (Oh, and remove or replace this text!)
+Bienvenido al minijuego de sigilo.
+Te encuentras atrapado dentro de uno de los recuerdos de la protagonista… un recuerdo distorsionado en forma de pesadilla.
+Tu objetivo es escapar de este lugar, pero para lograrlo deberás recolectar las 3 rosas que desbloquean la puerta hacia el siguiente nivel.
+
+No estarás solo.
+Algo te observa en la oscuridad… y te seguirá.
+
+Tendrás a tu disposición una linterna, activada con la tecla F.
+Al encenderla, funcionará por 5 segundos, y luego se recargará automáticamente durante 5 segundos.
+
+Consejo: La luz es tu aliada. Úsala sabiamente para abrirte paso entre las sombras.
+Buena suerte.
 => END

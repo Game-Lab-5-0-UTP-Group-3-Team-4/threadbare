@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl66dg38h6o1m"]
+
+[ext_resource type="Texture2D" uid="uid://cl7otofydr3g2" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/arbusto1.png" id="1_q1owq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlsph"]
+radius = 34.132095
+
+[node name="Arbusto pequeño" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -45)
+texture = ExtResource("1_q1owq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(0, 25)
+shape = SubResource("CircleShape2D_wlsph")

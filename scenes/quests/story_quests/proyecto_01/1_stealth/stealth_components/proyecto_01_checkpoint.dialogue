@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: The Threadbare Authors
 # SPDX-License-Identifier: MPL-2.0
 ~ start
-KnitWitch: This is a checkpoint that can be used to save player progress.
+KnitWitch: La luz es tu aliada. Úsala sabiamente para abrirte paso entre las sombras.
+Buena suerte.
 {{player_name}}: Thanks!
 => END

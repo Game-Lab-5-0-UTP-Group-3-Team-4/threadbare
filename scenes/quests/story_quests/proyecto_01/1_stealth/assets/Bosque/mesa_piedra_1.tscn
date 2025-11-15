@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1p5xxbm1eynf"]
+
+[ext_resource type="Texture2D" uid="uid://bibul7oa835sv" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/mesapiedra1.png" id="1_2bkk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7wqt"]
+size = Vector2(103, 48)
+
+[node name="Mesa_Piedra_1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2bkk4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+position = Vector2(-0.5, 25)
+shape = SubResource("RectangleShape2D_e7wqt")
