@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://gkf6jhut35x7"]
+[gd_scene load_steps=7 format=3 uid="uid://gkf6jhut35x7"]
 
 [ext_resource type="Script" uid="uid://cdann4hj0bofn" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/Programación/linterna_v_1.gd" id="1_ctxda"]
 [ext_resource type="AudioStream" uid="uid://bdifn7627h44y" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/Sonido/linterna-sonidos/flashlight-included.wav" id="2_auxt4"]
@@ -14,6 +14,9 @@ width = 256
 height = 256
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_auxt4"]
+radius = 577.00085
 
 [node name="Linterna" type="Node2D"]
 script = ExtResource("1_ctxda")
@@ -33,3 +36,16 @@ volume_db = -5.0
 [node name="SonidoOff" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_g4vdh")
 volume_db = -3.0
+
+[node name="LightArea" type="Area2D" parent="."]
+collision_layer = 1024
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightArea"]
+shape = SubResource("CircleShape2D_auxt4")
+
+[node name="DurationTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true

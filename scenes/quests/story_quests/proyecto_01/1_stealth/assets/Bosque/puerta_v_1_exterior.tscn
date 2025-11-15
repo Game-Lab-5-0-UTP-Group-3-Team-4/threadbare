@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://q3o3inxfocwl"]
+
+[ext_resource type="Texture2D" uid="uid://clcek4sji44ej" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/puertaprincipalrosas1.png" id="1_okrvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdqoa"]
+size = Vector2(226.75, 214)
+
+[node name="Puerta_v1_exterior" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_okrvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_wdqoa")

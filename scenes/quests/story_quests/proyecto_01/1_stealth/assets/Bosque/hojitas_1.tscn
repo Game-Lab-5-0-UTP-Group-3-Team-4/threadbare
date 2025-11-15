@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://flvvux5j4of0"]
+
+[ext_resource type="Texture2D" uid="uid://cq443tca4tga6" path="res://scenes/quests/story_quests/proyecto_01/1_stealth/assets/mapa-assets-v1/hojitas1.png" id="1_gjpie"]
+
+[node name="Hojitas 1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gjpie")
