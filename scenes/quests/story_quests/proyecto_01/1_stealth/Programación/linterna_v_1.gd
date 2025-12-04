@@ -10,7 +10,7 @@ var encendida := false
 var f_down := false
 var usable := true
 
-var max_duration := 5.0  # Duración máxima encendida
+var max_duration := 10.0  # Duración máxima encendida
 var cooldown_time := 5.0  # Tiempo de espera antes de volver a usar
 
 func _ready() -> void:
